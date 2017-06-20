@@ -192,7 +192,8 @@ io.on('connection', function (socket) {
 					isAdmin: true
 				});
 				data.isAdmin = true;
-				data.msg = JSON.stringify(apiData[0]);
+				data.msg = JSON.stringify(data.msg);
+				//data.msg = JSON.stringify(apiData[0]);
 				data.timestamp = time;
 				dbFunctions.pushMessage(data);
 			}, 2000)
