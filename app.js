@@ -20,7 +20,7 @@ var apiData;
 var chatObj = new Chat_connection_manager();
 
 dbFunctions.ConnectToRedis(startApp);
-
+/*
 request('http://beta.atorvia.com/api/1.0/tours/search?searchString=new&apikey=abc&apiSecret=xyz', function (error, response, body) {
 	if (!error && response.statusCode == 200) {
 		apiData = JSON.parse(body);
@@ -28,7 +28,7 @@ request('http://beta.atorvia.com/api/1.0/tours/search?searchString=new&apikey=ab
 	else{
 		throw error;
 	}
-})
+})*/
 
 app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/views/client.html');
