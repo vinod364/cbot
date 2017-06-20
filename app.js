@@ -186,7 +186,7 @@ io.on('connection', function (socket) {
 			setTimeout(function () {
 				socket.emit('chat message', {
 					roomID: data.roomID,
-					msg:JSON.stringify(data.msg);
+					msg:JSON.stringify(data.msg),
 					//msg: JSON.stringify(apiData[0]),
 					timestamp: time,
 					isAdmin: true
