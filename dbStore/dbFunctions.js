@@ -50,15 +50,34 @@ exports.pushMessage = function(data) {
 
 exports.setDetails = function(data) {
 	redisClient.hmset(data.roomID + "-details", {
+		
+		'Email': data.Email
+	});
+}
+/*
+exports.setDetails = function(data) {
+	redisClient.hmset(data.roomID + "-details", {
 		'Name': data.Name,
 		'Email': data.Email,
 		'Phone': data.Phone
 	});
 }
-
+*/
+/*
 exports.getDetails = function(roomID) {
 	var deffered = Q.defer();
 	redisClient.hmget(roomID + "-details", ["Name", "Email", "Phone"], function(err, result) {
+		if (!err) {
+			deffered.resolve(result)
+		} else {
+			deffered.reject(err);
+		}
+	});
+	return deffered.promise;
+}*/
+exports.getDetails = function(roomID) {
+	var deffered = Q.defer();
+	redisClient.hmget(roomID + "-details", ["Email"], function(err, result) {
 		if (!err) {
 			deffered.resolve(result)
 		} else {
