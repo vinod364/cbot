@@ -50,9 +50,8 @@ $Input.submit(function() {
 	sessionStorage.setItem('active', true);
 	socket.emit('add user', {
 		isNewUser: true,
-		Name: $nameInput.val().trim(),
-		Email: $emailInput.val().trim(),
-		Phone: $phoneInput.val().trim()
+		Email: $emailInput.val().trim()
+		
 	});
 });
 
