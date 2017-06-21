@@ -12,7 +12,7 @@ var config = require('./config');
 var mail = require('./mail');	//Configure mail.js and un-comment the mail code
 var btoa = require('btoa');		//Password is btoa hashed 
 var Chat_connection_manager = require('./models/chats_component');
-
+var apiai = require('apiai'); // npm package http://api.ai 
 var admins = {};
 var users = {};
 var apiData;
@@ -20,6 +20,10 @@ var apiData;
 var chatObj = new Chat_connection_manager();
 
 dbFunctions.ConnectToRedis(startApp);
+
+var apiai = require('apiai');
+//var app = apiai("<your client access token>");//Access token of api.ai
+
 /*
 request('http://beta.atorvia.com/api/1.0/tours/search?searchString=new&apikey=abc&apiSecret=xyz', function (error, response, body) {
 	if (!error && response.statusCode == 200) {
